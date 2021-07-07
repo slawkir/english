@@ -1,0 +1,372 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  list-style-type: none;
+}
+a,
+a:hover {
+  text-decoration: none;
+  color: initial;
+}
+.overflow {
+  overflow: hidden;
+}
+.black-white {
+  filter: saturate(0.1);
+}
+.rait {
+  overflow: hidden;
+  text-align: center;
+  height: 60px;
+}
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+button {
+  font-size: 3vw;
+  padding: 5px;
+  margin: 5px;
+  background: mediumvioletred;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+}
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1000px;
+  font-size: 1.3rem;
+  overflow: hidden;
+}
+thead {
+  display: table-header-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+th {
+  font-size: 2.2vw;
+  width: 10%;
+  font-weight: 400;
+  text-align: center;
+}
+td {
+  font-size: 2.2vw;
+  width: 10%;
+  font-weight: 400;
+  text-align: center;
+}
+body {
+  height: 100vh;
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.7s;
+  }
+  .show {
+    opacity: 0.8;
+    transition: 0.7s;
+    visibility: visible;
+  }
+}
+header {
+  height: 10vh;
+  min-height: 80px;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    .navigation {
+      .menu-toggle {
+        .burger {
+          width: 50px;
+          height: 50px;
+          position: relative;
+          top: 20px;
+          right: 20px;
+          border-radius: 4px;
+          z-index: 3;
+          span,
+          ::before,
+          ::after {
+            transition: 0.7s;
+            display: block;
+            width: 33px;
+            height: 4px;
+            margin-bottom: 5px;
+            position: relative;
+            top: 22px;
+            background: lightgrey;
+            border-radius: 3px;
+            z-index: 1;
+            left: 4px;
+          }
+          ::before {
+            content: "";
+            top: -9px;
+          }
+          ::after {
+            content: "";
+            top: 0px;
+          }
+        }
+        .clicked {
+          span {
+            background-color: transparent;
+            transition: 0.7s;
+          }
+          span::before {
+            -webkit-transform: translateY(9px) rotate(45deg);
+            -moz-transform: translateY(9px) rotate(45deg);
+            -ms-transform: translateY(9px) rotate(45deg);
+            -o-transform: translateY(9px) rotate(45deg);
+            transform: translateY(9px) rotate(45deg);
+            transition: 0.7s;
+          }
+          span::after {
+            -webkit-transform: translateY(-9px) rotate(-45deg);
+            -moz-transform: translateY(-9px) rotate(-45deg);
+            -ms-transform: translateY(-9px) rotate(-45deg);
+            -o-transform: translateY(-9px) rotate(-45deg);
+            transform: translateY(-9px) rotate(-45deg);
+            transition: 0.7s;
+          }
+        }
+        .menu {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          height: 100vh;
+          min-width: 250px;
+          top: 0px;
+          left: -10px;
+          transition: 0.7s;
+          -webkit-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.75);
+          box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.75);
+          background: mediumaquamarine;
+          list-style-type: none;
+          -webkit-font-smoothing: antialiased;
+          transform-origin: 0% 0%;
+          transform: translate(-100%, 0);
+        }
+        .show {
+          left: 250px;
+          transition: 0.7s;
+          z-index: 2;
+        }
+      }
+    }
+  }
+  .switch-container {
+    display: flex;
+    align-self: center;
+  }
+}
+main {
+  min-height: 80vh;
+  height: fit-content;
+  background-color: burlywood;
+  .cards-container {
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .category-card {
+        padding: 10px;
+        width: 295px;
+        height: 240px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 10px;
+        overflow: hidden;
+        background: mediumaquamarine;
+        cursor: pointer;
+        transition: 0.3s;
+        img {
+          margin-top: 10px;
+          border: 6px solid white;
+          border-radius: 50%;
+          width: 70%;
+          height: 190px;
+        }
+      }
+      .category-card-game {
+        padding: 10px;
+        width: 295px;
+        height: 240px;
+        border-radius: 8px;
+        text-align: center;
+        margin: 10px;
+        overflow: hidden;
+        background: mediumvioletred;
+        cursor: pointer;
+        transition: 0.3s;
+        img {
+          margin-top: 10px;
+          border: 6px solid white;
+          border-radius: 50%;
+          width: 70%;
+          height: 190px;
+        }
+      }
+    }
+    .words-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      .word-card {
+        position: relative;
+        width: 295px;
+        height: 240px;
+        text-align: center;
+        margin: 10px;
+        cursor: pointer;
+        perspective: 750px;
+        .front {
+          overflow: hidden;
+          position: absolute;
+          height: 240px;
+          width: 300px;
+          border: 5px solid mediumaquamarine;
+          border-radius: 8px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: 0.4s;
+          backface-visibility: hidden;
+          .rotate-button {
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: 2px 5px;
+            bottom: -10px;
+            right: 0px;
+            transition: 0.3s;
+          }
+          .title-en {
+            font-size: 1.5rem;
+            margin-top: 183px;
+            width: 100%;
+            background: wheat;
+            padding: 7px 0 9px;
+          }
+        }
+        .back {
+          overflow: hidden;
+          position: absolute;
+          height: 240px;
+          width: 300px;
+          border: 5px solid mediumaquamarine;
+          border-radius: 8px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          transition: 0.4s;
+          transform: rotateY(180deg);
+          backface-visibility: hidden;
+          .title-ru {
+            font-size: 1.5rem;
+            margin-top: 183px;
+            width: 100%;
+            background: wheat;
+            padding: 7px 0 9px;
+          }
+        }
+      }
+      .word-card-game {
+        position: relative;
+        width: 295px;
+        height: 240px;
+        text-align: center;
+        margin: 10px;
+        cursor: pointer;
+        perspective: 750px;
+        .front {
+          overflow: hidden;
+          position: absolute;
+          height: 240px;
+          width: 300px;
+          border: 5px solid mediumvioletred;
+          border-radius: 8px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          transition: 0.4s;
+          backface-visibility: hidden;
+        }
+      }
+    }
+    .btn-container {
+      text-align: center;
+      padding-bottom: 10px;
+      .start-btn {
+        padding: 20px 50px;
+        background: #db7093;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        margin: 0 auto;
+        transition: 0.3s;
+        outline: none;
+      }
+      .repeat-btn {
+        display: none;
+        padding: 40px;
+        background: palevioletred;
+        border: none;
+        color: white;
+        cursor: pointer;
+        margin: 0 auto;
+        transition: 0.3s;
+        outline: none;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-size: 50px;
+        background-position: center;
+      }
+    }
+  }
+}
+footer {
+  height: 10vh;
+  background: mediumaquamarine;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  img {
+    height: 50%;
+  }
+  a {
+    height: 50%;
+  }
+}
